@@ -1,56 +1,41 @@
-.h-screen{
+.h-screen {
     height: 100vh;
 }
 
-.mw-md{
+.mw-md {
     max-width: 28rem;
 }
 
-
-.user-circle-icon{
+.user-circle-icon {
     display: block;
     height: 2.5rem;
     width: auto;
 }
 
-.dashboard-background{
+.dashboard-background {
     background: #F4F5F7;
 }
 
-
-.laravel-logo{
+.laravel-logo {
     height: 4rem;
 }
 
-
-.custom-icon{
+.custom-icon {
     height: 2rem;
 }
 
-.small-icon{
+.small-icon {
     height: 1.25rem;
 }
 
-
-
-@media (min-width: 576px) { 
-
-
-}
-
+@media (min-width: 576px) {}
 
 @media (min-width: 768px) {
-
-
-    .laravel-logo{
+    .laravel-logo {
         height: 5rem;
     }
-    
+}
 
- }
+@media (min-width: 992px) {}
 
-
-@media (min-width: 992px) { }
-
-
-@media (min-width: 1200px) { .}
+@media (min-width: 1200px) {}
