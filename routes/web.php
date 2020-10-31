@@ -15,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
+})->name('homepage');;
 
 Route::get('/home', function () {
     return view('home');
-})->middleware(['auth']);
+})->middleware(['verified', 'auth'])->name('dashboard.home');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->middleware(['verified','auth'])->name('dashboard.profile');
+
+
