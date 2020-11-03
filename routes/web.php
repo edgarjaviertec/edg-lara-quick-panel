@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('homepage');;
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/dashboard', function () {
+    return view('dashboard');
 })->middleware(['verified', 'auth'])->name('dashboard.home');
 
 Route::get('/profile', function () {
