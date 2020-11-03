@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', 'Welcome')
+
 @section('content')
 <nav class="navbar navbar-expand-md navbar-light bg-white">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">

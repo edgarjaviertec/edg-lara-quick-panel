@@ -12,15 +12,36 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>{{ __('Current Password') }}</label>
-                            <input type="password" class="form-control" name="current_password" required autocomplete="current-password" />
+                            <input type="password"
+                                   class="form-control {{$errors->updatePassword->first('current_password') ? 'is-invalid' : '' }}"
+                                   name="current_password"
+                                   autocomplete="off"
+                                   required/>
+                            @error('current_password', 'updatePassword')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label>{{ __('Password') }}</label>
-                            <input type="password" class="form-control" name="password" required autocomplete="new-password" />
+                            <input type="password"
+                                   class="form-control {{$errors->updatePassword->first('password') ? 'is-invalid' : '' }}"
+                                   name="password"
+                                   autocomplete="off"
+                                   required/>
+                            @error('password', 'updatePassword')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group mb-0">
                             <label>{{ __('Confirm Password') }}</label>
-                            <input type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" />
+                            <input type="password"
+                                   class="form-control {{$errors->updatePassword->first('password_confirmation') ? 'is-invalid' : '' }}"
+                                   name="password_confirmation"
+                                   autocomplete="new-password"
+                                   required/>
+                            @error('password_confirmation', 'updatePassword')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-end border-0">

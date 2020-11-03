@@ -12,11 +12,27 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>{{ __('Name') }}</label>
-                            <input type="text" class="form-control" name="name" value="{{ old('name') ?? auth()->user()->name }}" required autofocus autocomplete="name" />
+                            <input type="text"
+                                   class="form-control {{$errors->updateProfileInformation->first('name') ? 'is-invalid' : '' }}"
+                                   name="name"
+                                   value="{{ old('name') ?? auth()->user()->name }}"
+                                   autocomplete="off"
+                                   required/>
+                            @error('name', 'updateProfileInformation')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group mb-0">
                             <label>{{ __('Email') }}</label>
-                            <input type="email" class="form-control" name="email" value="{{ old('email') ?? auth()->user()->email }}" required autofocus />
+                            <input type="email"
+                                   class="form-control {{$errors->updateProfileInformation->first('email') ? 'is-invalid' : '' }}"
+                                   name="email"
+                                   value="{{ old('email') ?? auth()->user()->email }}"
+                                   autocomplete="off"
+                                   required/>
+                            @error('email', 'updateProfileInformation')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-end border-0">

@@ -3,27 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', config('app.name', 'Laravel'))</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @include('includes.bootstrap-css')
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-    </style>
+    @include('includes.bootstrap-styles')
 </head>
-
 <body class="dashboard-background">
-    <main>
-        @include('includes.header')
-        <div class="container py-4 py-md-5">
-            @yield('content')
-        </div>
-    </main>
-    @include('includes.bootstrap-js')
+<main>
+    @include('includes.header')
+    <div class="container py-4 py-md-5">
+        @yield('content')
+    </div>
+</main>
+@yield('modals')
+@include('includes.axios-script')
+@include('includes.bootstrap-scripts')
+@yield('custom-scripts')
 </body>
-
 </html>
