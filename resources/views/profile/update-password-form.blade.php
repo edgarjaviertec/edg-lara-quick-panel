@@ -1,8 +1,8 @@
 <div class="mb-5">
     <div class="row">
         <div class="col-12 col-lg-4">
-            <h2 class="h4">Profile information</h2>
-            <p>Update your account's profile information and email address.</p>
+            <h2 class="h4">Update Password</h2>
+            <p>Ensure your account is using a long, random password to stay secure.</p>
         </div>
         <div class="col-12 col-lg-8">
             <form method="POST" action="{{ route('user-password.update') }}">
