@@ -18,7 +18,6 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**
@@ -32,36 +31,26 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
-
-
         Fortify::loginView(function () {
-            return view('auth.login');
+            return view('pages.auth.login');
         });
-
         Fortify::registerView(function () {
-            return view('auth.register');
+            return view('pages.auth.register');
         });
-
         Fortify::requestPasswordResetLinkView(function () {
-            return view('auth.forgot-password');
+            return view('pages.auth.forgot-password');
         });
-
         Fortify::resetPasswordView(function ($request) {
-            return view('auth.reset-password', ['request' => $request]);
+            return view('pages.auth.reset-password', ['request' => $request]);
         });
-
         Fortify::verifyEmailView(function () {
-            return view('auth.verify-email');
+            return view('pages.auth.verify-email');
         });
-
         Fortify::confirmPasswordView(function () {
-            return view('auth.confirm-password');
+            return view('pages.auth.confirm-password');
         });
-
         Fortify::twoFactorChallengeView(function () {
-            return view('auth.two-factor-challenge');
+            return view('pages.auth.two-factor-challenge');
         });
-
-        
     }
 }

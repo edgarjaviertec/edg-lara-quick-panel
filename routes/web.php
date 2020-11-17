@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\OtherBrowserSessionsController;
+use App\Http\Controllers\ProfilePhotoController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +17,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('homepage');;
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['verified', 'auth'])->name('dashboard.home');
-
-Route::get('/profile', function () {
-    return view('profile');
-})->middleware(['verified','auth'])->name('dashboard.profile');
+    return view('pages.welcome');
+})->name('homepage');
 
 
+Route::middleware(['verified', 'auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('pages.admin.dashboard');
+    })->name('dashboard.home');
+
+    Route::get('/profile', [UserProfileController::class, 'show'])->name('dashboard.profile');
+
+    Route::get('/user/other-browser-sessions', [OtherBrowserSessionsController::class, 'index'])
+        ->name('other-browser-sessions.index');
+
+    Route::delete('/user/other-browser-sessions', [OtherBrowserSessionsController::class, 'destroy'])
+        ->name('other-browser-sessions.destroy');
+
+    Route::get('/user/profile-photo', [ProfilePhotoController::class, 'show'])
+        ->name('current-user-photo.show');
+
+    Route::delete('/user/profile-photo', [ProfilePhotoController::class, 'destroy'])
+        ->name('current-user-photo.destroy');
+});
+
+
+Route::get('/test', [UserProfileController::class, 'test']);
