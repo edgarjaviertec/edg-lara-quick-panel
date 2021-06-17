@@ -15,12 +15,22 @@ php artisan migrate
 ````
 
 ### Paso 3
+Crea tu archivo .env usando de ejemplo el archivo .env.example:
+```
+cp .env.example .env
+````
+
+### Paso 4
+Modifica tu archivo .env con la configuración de tu base de datos.
+
+
+### Paso 5
+Crea un enlace simbólico para acceder desde la carpeta public a la carpeta storage:
 ```
 php artisan storage:link
 ````
 
-
-### Paso 4
+### Paso 6
 Entra a localhost/register y crea un nuevo usuario para poder ingresar al panel
 
 
