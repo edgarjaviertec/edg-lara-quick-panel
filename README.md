@@ -34,7 +34,7 @@ php artisan storage:link
 Entra a localhost/register y crea un nuevo usuario para poder ingresar al panel
 
 
-### Captura de pantalla
+### Capturas de pantalla
 
 #### localhost/
 ![Página de inicio](screenshots/home.png)
